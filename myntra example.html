@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Myntra</title>
+     <link rel="icon" type="image/png" href="https://constant.myntassets.com/checkout/assets/img/myntraIcon.png">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+          integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <style>
+          * {
+               text-decoration: none;
+          }
+
+          body {
+               margin: 0;
+          }
+
+          .navbar {
+               display: flex;
+               justify-content: space-between;
+               align-items: center;
+               background-color: #ffffff;
+               box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+               padding: 1%;
+               position: sticky;
+               top: 0px;
+               left: 0px;
+          }
+
+          .nav-left {
+               display: flex;
+               justify-content: space-evenly;
+               align-items: center;
+               width: 45%;
+          }
+
+          .nav-left a {
+               padding: 0px;
+               color: black;
+               font-size: 0.8rem;
+               font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+               font-weight: bold;
+          }
+
+          .nav-right {
+               display: flex;
+               justify-content: space-between;
+
+          }
+
+          .nav-middle {
+               background-color: #f5f5f6;
+               display: flex;
+          }
+
+          .nav-middle .fa-search {
+               background-color: #f5f5f6;
+               border: 1px solid #f5f5f6;
+               padding: 9.9px;
+          }
+
+          .nav-middle input {
+               border: none;
+               outline: none;
+               padding: 10px;
+               border: 1px solid #f5f5f6;
+               background-color: #f5f5f6;
+               width: 325px;
+          }
+
+          .user-icon {
+               padding: 0 12px 0 17px;
+               position: relative;
+               top: 15px;
+               right: 80px;
+               display: flex;
+          }
+
+          .heart-icon {
+               padding: 0 12px 0 17px;
+               position: relative;
+               top: 15px;
+               right: 50px;
+               display: flex;
+          }
+
+          .bag-icon {
+               padding: 0 12px 0 17px;
+               position: relative;
+               top: 15px;
+               right: 10px;
+               display: flex;
+          }
+
+          .fa-user {
+               position: absolute;
+               bottom: 20px;
+               left: 10px;
+               display: block;
+          }
+
+          .fa-heart {
+               position: absolute;
+               bottom: 20px;
+               left: 10px;
+               display: block;
+          }
+
+          .fa-bag-shopping {
+               position: absolute;
+               bottom: 20px;
+               left: 4px;
+               display: block;
+          }
+
+          .icon-content {
+               color: #000;
+               position: absolute;
+               bottom: 4px;
+               left: 1px;
+               font-size: 12px;
+               font-weight: 700;
+               display: inline-block;
+               padding-top: 10px;
+               line-height: 6px;
+          }
+
+          .container img {
+               margin-top: 15px;
+               width: 100%;
+          }
+
+          .header-4 {
+               color: #3e4152;
+               letter-spacing: .15em;
+               font-size: 1.8em;
+               margin: 50px 0 10px 50px;
+               max-height: 5em;
+               font-weight: 700;
+               font-family: sans-serif;
+          }
+
+          .product {
+               display: flex;
+          }
+
+          .product a {
+               width: 20%;
+          }
+
+          .product-category {
+               display: flex;
+               flex-wrap: wrap;
+
+          }
+
+          .product-category a {
+               width: 16%;
+          }
+
+          .online {
+               display: flex;
+               background-color: white;
+               forced-color-adjust: grey;
+               font-family: color grey;
+          }
+
+          .footer {
+               margin: 2%;
+          }
+
+          .footer-1 {
+               margin: 2%;
+          }
+
+          .footer-2 {
+               margin: 2%;
+          }
+
+          .footer-3 {
+               margin: 2%;
+          }
+
+          .footer-4 {
+               margin: 2%;
+               display: flex;
+          }
+
+          .sidebar a{
+               position: fixed;
+               right: 0;
+               top: 60%;
+               transform: rotate(-90deg);
+               background-color: #3b5998;
+               color: white;
+               vertical-align: middle;
+               text-align: center;
+               font-size: 24px;
+               font-weight: 700;
+               padding: 10px;
+               text-align: center;
+               border-radius: 8px;
+               box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          }
+          .fa-brands{
+               margin-left: 50px;
+          }
+          .sidebar .new {
+               background-color: #ffcc00;
+               color: #333;
+               border-radius: 50%;
+               padding: 2px 5px;
+               font-size: 10px;
+               position: absolute;
+               bottom: -10px;
+               right: 10px;
+          }
+     </style>
+</head>
+
+<body>
+     <nav class="navbar">
+          <div class="nav-left">
+               <a href="#">
+                    <img class="img" src="https://constant.myntassets.com/checkout/assets/img/myntraIcon.png"
+                         alt="myntra-images">
+               </a>
+               <a href="#">
+                    MEN
+               </a>
+               <a href="#">
+                    WOMEN
+               </a>
+               <a href="#">
+                    KIDS
+               </a>
+               <a href="#">
+                    HOME & LIVING
+               </a>
+               <a href="#">
+                    BEAUTY
+               </a>
+               <a href="#">
+                    STUDIO
+               </a>
+          </div>
+          <div class="nav-middle">
+               <div class="icon">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+               </div>
+               <div class="input">
+                    <input type="text" placeholder="Search for products, brands and more">
+               </div>
+          </div>
+          <div class="nav-right">
+               <div class="user-icon">
+                    <a href="#">
+                         <span><i class="fa-regular fa-user"></i></span><br>
+                         <span class="icon-content">Profile</span>
+                    </a>
+               </div>
+               <div class="heart-icon">
+                    <a href="#">
+                         <span><i class="fa-regular fa-heart"></i></span><br>
+                         <span class="icon-content">Wishlist</span>
+                    </a>
+               </div>
+               <div class="bag-icon">
+                    <a href="#">
+                         <span><i class="fa-solid fa-bag-shopping"></i></span><br>
+                         <span class="icon-content">Bag</span>
+                    </a>
+               </div>
+          </div>
+     </nav>
+     <div class="container">
+          <a href="">
+               <img src="https://assets.myntassets.com/w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2022/7/25/b656a7f4-4688-4997-bb7c-54b78793981e1658752386588-Western-Wear_Desk.jpg"
+                    alt="">
+          </a>
+          <div class="header">
+               <h4 class="header-4">
+                    MEDAL WORTHY BRANDS TO BAG
+               </h4>
+          </div>
+          <div class="product">
+               <a href="#">
+                    <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/8/3/d6529cc8-ff03-4d85-88b7-5358a1d5a46b1691057399814-image_png1830835492.png"
+                         alt="">
+               </a>
+               <a href="#">
+                    <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/retaillabs/2023/8/3/a06120fd-caa3-4dac-93c3-3d4d574f8d7c1691087170219-image_png_116457033.png"
+                         alt="">
+               </a>
+               <a href="#">
+                    <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/retaillabs/2023/8/4/71a69cc9-210a-4a95-b37f-78319c8f33761691141606256-image_png2064277310.png"
+                         alt="">
+               </a>
+               <a href="#">
+                    <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/29/00e27983-d373-4d86-9f25-3e46a18ec12a1690609817622-Top_casual_Styles-_Levi-s-_Tommy_Min_40.png"
+                         alt="">
+               </a>
+               <a href="#">
+                    <img
+                         src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/8/3/2ccbd34a-3340-4b55-bd4e-2ac182e425c11691079149976-image_png_1139490265.png">
+               </a>
+               <a href="#">
+                    <img
+                         src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/8/4/b504644b-f446-48c9-b928-36f1958bd19a1691142484406-image_png_292913761.png">
+               </a>
+          </div>
+          <div class="header">
+               <h4 class="header-4">
+                    GRAND GLOBAL BRANDS
+               </h4>
+          </div>
+          <div class="product">
+               <a href="#">
+                    <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/437645a4-988c-4f53-aff3-b1fdb34938481690773011106-FCUK.png"
+                         alt="">
+               </a>
+               <a href="#">
+                    <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/d400d2ce-5755-4c86-96b8-26899aea6ea61690773011130-GANT.png"
+                         alt="">
+               </a>
+               <a href="#">
+                    <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/044555a5-9987-4a06-8679-8aeb2dd963f91690773011013-boohooMan.png"
+                         alt="">
+               </a>
+               <a href="#">
+                    <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/7aac1f32-1a1a-4ba6-924b-ee1c28553aed1690773011304-Nautica.png"
+                         alt="">
+               </a>
+               <a href="#">
+                    <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/8/2/805eeb23-ec17-4b50-b798-1244133c02041690955797245-image_png_1993656242.png"
+                         alt="">
+               </a>
+               <a href="#">
+                    <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/92d5e2ec-a736-4bfd-832b-6972121829c91690773010945-Aldo.png"
+                         alt="">
+               </a>
+          </div>
+          <div class="header">
+               <h4 class="header-4">
+                    SHOP BY CATEGORY
+               </h4>
+          </div>
+          <div class="product-category">
+               <a href="#">
+                    <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/0dedd7c2-6c01-4ab0-a907-8928e56066d41690787339184-Shop-By-Category_HP-4_02.jpg"
+                         alt="">
+               </a>
+               <a href="#">
+                    <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/bfab4827-0ea6-4a5b-8b8d-167d497ae78e1690787339167-Shop-By-Category_HP-4_03.jpg"
+                         alt="">
+               </a>
+               <a href="#">
+                    <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/c61cfcfb-749f-4d8e-a318-0ea8f8705a1c1690787339442-Shop-By-Category_HP-4_04.jpg"
+                         alt="">
+               </a>
+               <a href="#">
+                    <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/a50c2dec-c5bc-46f3-b754-294fb46c61971690787339077-Shop-By-Category_HP-4_05.jpg"
+                         alt="">
+               </a>
+               <a href="#">
+                    <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/da4059bf-14f1-4928-b5b9-be8719887b8e1690787339149-Shop-By-Category_HP-4_06.jpg"
+                         alt="">
+               </a>
+               <a href="#">
+                    <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/3a804edc-ce57-4eb5-bb6a-493d458973661690787338896-Shop-By-Category_HP-4_07.jpg"
+                         alt="">
+               </a>
+               <a href="#">
+                    <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/84870fc6-4805-41a4-b9eb-a8d7adb6c0d21690787339128-Shop-By-Category_HP-4_08.jpg"
+                         alt="">
+               </a>
+               <a href="#">
+                    <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/069d06bc-1b75-43f4-b8d1-1ec46193eb021690787339028-Shop-By-Category_HP-4_09.jpg"
+                         alt="">
+               </a>
+               <a href="#">
+                    <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/19755254-9c13-40a3-9cab-2bb9714391ab1690787339274-Shop-By-Category_HP-4_10.jpg"
+                         alt="">
+               </a>
+               <a href="#">
+                    <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/dd262b36-3a75-464a-97b5-235984080d851690787338916-Shop-By-Category_HP-4_11.jpg"
+                         alt="">
+               </a>
+               <a href="#">
+                    <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/d26e5ed5-d846-4692-88a5-54ab7d79203b1690787339203-Shop-By-Category_HP-4_12.jpg"
+                         alt="">
+               </a>
+               <a href="#">
+                    <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/dd3d6118-cd57-4e73-a4a4-e7f8a6bfde7b1690787339093-Shop-By-Category_HP-4_13.jpg"
+                         alt="">
+               </a>
+          </div>
+     </div>
+     <div class="online">
+          <div class="footer">
+               <h4>ONLINE SHOPPING</h4>
+               <p>
+                    MEN <br> WOMEN <br>KIDS <br> BEAUTY <br>HOME & LIVING <br>GIFT CARDS <br>
+                    myntra insiders <br>
+               <h4>USEFUL LINKS</h4>
+               Blog <br>Career <br> Site Map <br> Corporate Information <br>whitehat <br>Cleartrip <br>
+               </p>
+          </div>
+          <div class="footer">
+               <h4>CUSTOMER POLICIES</h4>
+               <P>
+                    Cantact us <br>FAQ <br>T&C <br>Terms of Use <br> Tracking Order <br>Shipping <br>Cancellation
+                    <br>Return <br>Privacy Policy <br>
+               </P>
+          </div>
+          <div class="footer-1">
+               <h4>EXPERIENCE MYNTRA APP ON MOBILE
+
+               </h4>
+               <p>
+                    <a href=""><img src="images/image.01.png" alt=""></a>
+                    <a href=""><img src="images/image 02.png" alt=""></a>
+               </p>
+               <p>
+                    KEEP IN TOUCH
+               </p>
+               <p>
+                    <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href=""><i class="fa-brands fa-twitter"></i></a>
+                    <a href=""><i class="fa-brands fa-youtube"></i></a>
+                    <a href=""><i class="fa-brands fa-instagram"></i></a>
+               </p>
+          </div>
+          <div class="footer-2">
+               <p>
+                    <a href=""><img src="images/image 06.jpg" alt=""></a>
+               </p>
+          </div>
+     </div>
+     <div class="footer-3">
+          <h4>POPULAR SEARCHES</h4>
+          <p>
+               Makeup| Dresses For Girls | T-Shirts | Sandals | Headphones | Babydolls | Blazers For Men | Handbags |
+               Ladies Watches Bags |
+               Sport Shoes | Reebok Shoes | Puma Shoes | Boxers | Wallets | Tops Earrings | Fastrack Watches | Kurtis |
+               Nike | Smart Watches|
+               Titan Watches | Designer Blouse | Gowns Rings | Cricket Shoes | Forever 21 Eye Makeup | Photo Frames |
+               Punjabi Suits |
+               Bikini | Myntra Fashion | Show Lipstick | Saree | Watches | Dresses | Lehenga | Nike Shoes | Goggles |
+               Bras
+               | Suit | Chinos Shoes |
+               Adidas Shoes | Woodland Shoes | Jewellery Designers | Sarees |
+          </p>
+     </div>
+     <div class="footer-4">
+          <p> In case of any concern, Contact Us </p>
+          <p>© 2024 www.myntra.com. All rights reserved.</p>
+          <p>A Flipkart company</p>
+     </div>
+     <div class="sidebar">
+          <a href="">
+               <div>FLAT ₹200 OFF</div>
+               <div class="new">NEW</div>
+          </a>
+     </div>
+</body>
+
+</html>
